@@ -14,7 +14,7 @@ function Body() {
     <div className="w-6/7 ">
         <Outlet />
     </div>
-</div>
+    </div>
 
   )
 }

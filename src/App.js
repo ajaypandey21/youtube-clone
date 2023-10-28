@@ -8,7 +8,7 @@ import MainContainer from './component/MainContainer';
 import Watch from './component/Watch';
 import ErrorPage from './component/ErrorPage';
 
-const appRoute = createBrowserRouter([
+const appRouter = createBrowserRouter([
   {
     path:"/",
     errorElement:<ErrorPage />,
@@ -33,7 +33,7 @@ function App() {
     <div > 
       <Provider store={store} >
       <Header />
-      <RouterProvider router={appRoute} />
+      <RouterProvider router={appRouter} />
       </Provider>
     </div>
   );
