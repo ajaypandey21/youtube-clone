@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Comments = (item) => {
-  console.log(item)
+  
 
   // const { authorDisplayName, authorProfileImageUrl, likeCount, textDisplay } = data?.info?.items?.[0]?.snippet?.topLevelComment?.snippet || {};
   const { authorDisplayName, authorProfileImageUrl, likeCount, textDisplay } = item?.info?.snippet?.topLevelComment?.snippet || {};

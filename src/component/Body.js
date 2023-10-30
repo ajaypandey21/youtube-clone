@@ -8,12 +8,13 @@ function Body() {
   
   return (
     <div className="flex">
-    <div className="w-1/7">
+    <div className="">
         <Sidebar />
     </div>
-    <div className="w-6/7 ">
-        <Outlet />
-    </div>
+   
+    <Outlet />
+
+
     </div>
 
   )

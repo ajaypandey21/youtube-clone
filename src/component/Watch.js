@@ -3,8 +3,13 @@ import { useDispatch } from 'react-redux'
 import { closeMenu } from '../utils/NavSlice';
 import { useSearchParams } from 'react-router-dom';
 import CommentContainer from './CommentContainer';
+import LiveChat from './LiveChat';
+import { useSelector } from 'react-redux'
 
 function Watch() {
+  const isMenuOpen = useSelector(store=>store.nav.isMenuOpen)
+  const marginLiveChat = isMenuOpen? (""):("ml-24")
+ 
     const [searchParams] = useSearchParams();
     const dispatch  = useDispatch();
     
@@ -14,24 +19,53 @@ function Watch() {
     },[])
     
   return (
-  <div className='flex flex-col ml-10'>
-       <div className=' ml-2 p-2'>
-          <iframe width="700" height="380" src={`https://www.youtube.com/embed/${searchParams.get("v")}`}  
-          title="YouTube video player" 
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen>
-          </iframe>
-       </div>
+ 
 
-      
-        <CommentContainer />
-
-      
-
+<div className={`flex flex-col w-full  mt-6  ${marginLiveChat} `}>
+<div className="px-5 flex w-full ">
+  <div className="">
+    <iframe className='rounded-xl'
+      width="740"
+      height="400"
+      src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+    ></iframe>
   </div>
+<div className="w-full">
+    <LiveChat />
+    
+  </div>
+</div>
+<CommentContainer />
+</div>
 
   )
 }
 
 export default Watch;
+
+
+ // <div className='flex flex-col w-full   ml-10'>
+  //      <div className=' ml-2 p-2 w-full flex'>
+  //       <div>
+  //       <iframe width="740" height="380" src={`https://www.youtube.com/embed/${searchParams.get("v")}`}  
+  //         title="YouTube video player" 
+  //         frameBorder="0"
+  //         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  //         allowFullScreen>
+  //         </iframe>
+
+  //       </div>
+          
+  //         <div className='w-full'>
+  //         <LiveChat />
+          
+  //       </div>
+  //      </div>
+       
+      
+  //       <CommentContainer />
+  // </div>

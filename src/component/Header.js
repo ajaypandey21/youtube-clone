@@ -34,7 +34,7 @@ const apiCall = async()=>{
    
 }
   return (
-        <div className="grid grid-flow-col p-3 shadow-lg">
+        <div className="grid grid-flow-col p-3 shadow-lg  w-full">
             <div className="flex col-span-2 ">
                 <img className="h-8 cursor-pointer" src="https://static.thenounproject.com/png/2832810-200.png" alt="icon" onClick={()=>collapse()}/>
                 <a href="/">

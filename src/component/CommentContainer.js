@@ -10,21 +10,21 @@ const CommentContainer = () => {
     useEffect(()=>{
         getComments();
 
-         //eslint-disable-next-line
-
+        
+        // eslint-disable-next-line
     },[])
     const getComments = async()=>{
         const data = await fetch(COMMENT_API+searchParams.get("v"))
         const json = await data.json()
         setcodata(json?.items)
-        console.log(codata)
+        
         // console.log(json.items[1].snippet.topLevelComment.snippet.textDisplay) // comment
         // console.log(json.items[10].snippet.topLevelComment.snippet.authorDisplayName) // author name
         // console.log(json.items[10].snippet.topLevelComment.snippet.authorProfileImageUrl) // author pic
         // console.log(json.items[10].snippet.topLevelComment.snippet.likeCount) // author likes
 
     }
-    console.log(codata)
+    
 
   return (
    
