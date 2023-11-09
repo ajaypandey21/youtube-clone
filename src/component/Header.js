@@ -34,37 +34,37 @@ const apiCall = async()=>{
    
 }
   return (
-        <div className="grid grid-flow-col p-3 shadow-lg  w-full">
-            <div className="flex col-span-2 ">
-                <img className="h-8 cursor-pointer" src="https://static.thenounproject.com/png/2832810-200.png" alt="icon" onClick={()=>collapse()}/>
-                <a href="/">
-                <img className="h-6 cursor-pointer mt-1 ml-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1024px-YouTube_Logo_2017.svg.png" alt="Youtube"/>
-                </a>
+            <div className="grid grid-flow-col p-3 shadow-lg  w-full">
+                <div className="flex col-span-2 ">
+                    <img className="h-8   cursor-pointer" src="https://static.thenounproject.com/png/2832810-200.png" alt="icon" onClick={()=>collapse()}/>
+                    <a href="/">
+                    <img className="h-6 sm:hidden cursor-pointer mt-1 ml-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1024px-YouTube_Logo_2017.svg.png" alt="Youtube"/>
+                    </a>
+                </div>
+
+                <div className="col-span-11 sm:ml-9">
+                    <input className="border border-gray-400 rounded-l-full p-2  w-1/2 " onFocus={()=>setSearchopen(true)}
+                    onBlur={()=>setSearchopen(false)}
+                    value={queryvalue} onChange={(e)=>{setQueryvalue(e.target.value)}} type="text"></input>
+                
+
+                    <button className="border border-gray-400 px-4 py-2 rounded-r-full bg-gray-300">🔍</button>
+                {searchOpen &&
+                <div className="absolute bg-white w-[30rem] mt-2 " >
+                        <ul className="p-2 m-1">
+                            {filteredvalue && filteredvalue.map((item)=> <li className="m-1" key={item}>🔍 {item}</li>)}
+                        </ul>
+                </div>
+                } 
+                </div>
+
+                <div className="col-span-1">
+                    <img className="h-8 "src="https://cdn-icons-png.flaticon.com/512/666/666201.png" alt="user" />  
+                </div>
+
+
             </div>
-
-            <div className="col-span-11">
-                <input className="border border-gray-400 rounded-l-full p-2  w-1/2" onFocus={()=>setSearchopen(true)}
-                onBlur={()=>setSearchopen(false)}
-                value={queryvalue} onChange={(e)=>{setQueryvalue(e.target.value)}} type="text"></input>
-               
-
-                <button className="border border-gray-400 px-4 py-2 rounded-r-full bg-gray-300">🔍</button>
-               {searchOpen &&
-               <div className="absolute bg-white w-[30rem] mt-2 " >
-                    <ul className="p-2 m-1">
-                        {filteredvalue && filteredvalue.map((item)=> <li className="m-1" key={item}>🔍 {item}</li>)}
-                    </ul>
-              </div>
-               } 
-            </div>
-
-            <div className="col-span-1">
-                <img className="h-8 "src="https://cdn-icons-png.flaticon.com/512/666/666201.png" alt="user" />  
-            </div>
-
-
-        </div>
-)
+    )
 }
 export default Header;
 

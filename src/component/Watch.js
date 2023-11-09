@@ -21,7 +21,7 @@ function Watch() {
   return (
  
 
-<div className={`flex flex-col w-full  mt-6  ${marginLiveChat} `}>
+<div className={`flex flex-col w-full sm:w-1/2  mt-6  ${marginLiveChat} `}>
 <div className="px-5 flex w-full ">
   <div className="">
     <iframe className='rounded-xl'

@@ -4,7 +4,7 @@ import Buttons from './Buttons'
 
 function Buttonlist({name}) {
   return (
-    <div className='flex justify-center '>
+    <div className='flex justify-center  flex-wrap '>
 
     <Buttons name={"All"} />
     <Buttons name={"Football"} />

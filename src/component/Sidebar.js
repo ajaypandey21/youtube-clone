@@ -77,7 +77,7 @@ function Sidebar() {
     const isMenuOpen = useSelector(store=>store.nav.isMenuOpen)
     if (!isMenuOpen) return null;
   return (
-    <div className=' p-2 w-48 bg-white shadow-lg  '>
+    <div className='  p-2 w-48 bg-white shadow-lg  sm:absolute sm:z-0 '>
         <ul>
             <li><Link to="/">Home</Link></li>
             <li>Shorts</li>

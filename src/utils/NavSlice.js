@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
         {
             name:"nav",
             initialState:{
-                isMenuOpen:true
+                isMenuOpen:false
             },
             reducers:{
                 hamNAV:(state)=>{state.isMenuOpen = !state.isMenuOpen},
