@@ -15,6 +15,7 @@ function Header() {
         dispatch(hamNAV())
 }
 useEffect(()=>{
+    debugger;
     const timer =setTimeout(()=>apiCall(),200);
    
     return()=>{
